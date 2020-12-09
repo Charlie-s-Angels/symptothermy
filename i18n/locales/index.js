@@ -2,8 +2,7 @@
 
 import I18n from 'i18n-js';
 
-//import memoize from 'lodash.memoize'; // Use for caching/memoize for better performance
-// import { I18nManager } from 'react-native';
+import * as Localization from 'expo-localization';
 
 import en from './en';
 import fr from './fr';
@@ -13,8 +12,7 @@ import fr from './fr';
   //I18n.locale = locales[0].languageTag;
 //}
 
-I18n.defaultLocale = 'en';
-I18n.locale = 'en';
+I18n.locale = Localization.locale;
 I18n.fallbacks = true;
 I18n.translations = { en, fr };
 
