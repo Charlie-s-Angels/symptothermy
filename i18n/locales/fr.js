@@ -1,6 +1,7 @@
 export default {
   homepage: {
     language: 'Language',
-    welcome: 'Bienvenue sur Symptothermia',
+    title: 'Symptothermie',
+    welcome: 'Débloque ta propre magie',
   },
 }

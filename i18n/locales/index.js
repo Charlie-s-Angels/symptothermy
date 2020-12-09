@@ -13,8 +13,8 @@ import fr from './fr';
   //I18n.locale = locales[0].languageTag;
 //}
 
-I18n.defaultLocale = 'fr';
-I18n.locale = 'fr';
+I18n.defaultLocale = 'en';
+I18n.locale = 'en';
 I18n.fallbacks = true;
 I18n.translations = { en, fr };
 

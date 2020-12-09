@@ -11,12 +11,10 @@ const listLanguage = [
 const App = () => {
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>{I18n.t('homepage.title')}</Text>
       <Text style={styles.text}>{I18n.t('homepage.welcome')}</Text>
       <StatusBar style="auto" />
-      <Button
-        title="Signup"
-        onPress={() => Alert.alert('Simple Button pressed')}
-      />
+
     </View>
   );
 }
@@ -28,9 +26,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  title: {
+    fontSize: 35,
+    color: 'blue',
+  },
   text: {
     fontSize: 25,
-    color: 'blue',
+    color: 'grey',
   }
 });
 
