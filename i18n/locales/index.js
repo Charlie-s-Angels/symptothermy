@@ -13,11 +13,9 @@ import fr from './fr';
   //I18n.locale = locales[0].languageTag;
 //}
 
-I18n.translations = {
-  default: fr,
-  en,
-  fr,
-};
-
+I18n.defaultLocale = 'fr';
+I18n.locale = 'fr';
 I18n.fallbacks = true;
+I18n.translations = { en, fr };
+
 export default I18n;
