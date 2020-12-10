@@ -15,9 +15,6 @@ const listLanguage = [
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{I18n.t('homepage.title')}</Text>
-      <Text style={styles.text}>{I18n.t('homepage.welcome')}</Text>
-      <StatusBar style="auto" />
       <Graph />
     </View>
 
