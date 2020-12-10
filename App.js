@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 import I18n from './i18n/locales';
 import Graph from './components/Graph';
 
+
 const listLanguage = [
   {key:'en', label:'en'},
   {key:'fr', label:'fr'},
