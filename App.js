@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 
+
+
 const App = () => {
   return (
     <View style={styles.container}>
@@ -11,7 +13,9 @@ const App = () => {
         title="Signup"
         onPress={() => Alert.alert('Simple Button pressed')}
       />
+
     </View>
+
   );
 }
 
@@ -25,6 +29,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 25,
     color: 'blue',
+
   }
 });
 
