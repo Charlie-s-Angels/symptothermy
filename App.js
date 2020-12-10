@@ -8,6 +8,8 @@ const listLanguage = [
   {key:'fr', label:'fr'},
 ]
 
+
+
 const App = () => {
   return (
     <View style={styles.container}>
@@ -16,6 +18,7 @@ const App = () => {
       <StatusBar style="auto" />
 
     </View>
+
   );
 }
 
