@@ -4,6 +4,7 @@ export default {
     title: 'Symptothermie',
     welcome: 'Débloque ta propre magie',
   },
+
   welcomepage: {
     title: 'Bienvenue',
     choiceDatas: 'Avant de commencer, nous préservons ctre vie privée et vos données n\'appartiennent qu\'à vous: où souhaitez-vous les stocker?',
@@ -77,4 +78,5 @@ export default {
   learn: {
     article: 'Article'
   }
+
 }

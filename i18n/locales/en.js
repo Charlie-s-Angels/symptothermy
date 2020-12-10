@@ -1,9 +1,10 @@
 export default {
   homepage: {
+    language: 'Language',
     title: 'Symptothermy',
     welcome: 'Unlock your own magic',
   },
-
+    
   welcomepage: {
     title: 'Welcome',
     choiceDatas: 'Before we get started, we value your prevacy and your data only belongs to you : where would you like to store it ?',
