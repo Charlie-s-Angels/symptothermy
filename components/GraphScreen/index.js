@@ -85,6 +85,10 @@ const GraphScreen = ({ navigation }) => {
         title="Go to Settings"
         onPress={() => navigation.navigate('Settings')}
       />
+      <Button
+        title="Go to Learn"
+        onPress={() => navigation.navigate('Learn')}
+      />
         <FlatList data={InvertValues(current_cycle_values)} renderItem={renderItem} keyExtractor={item => item.id} horizontal inverted />
       </SafeAreaView>
     );

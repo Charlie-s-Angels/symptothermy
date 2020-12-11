@@ -9,12 +9,20 @@ const SettingsScreen = ({navigation}) => {
         title="Go to graph"
         onPress={() => navigation.navigate('Graph')}
         />
+        <Button
+        title="Go to Learn"
+        onPress={() => navigation.navigate('Learn')}
+      />
     <Button
         title={I18n.t('settings.profil')}
         onPress={() => Alert.alert('Button pressed')}
       />
       <Button
         title={I18n.t('settings.notifications')}
+        onPress={() => Alert.alert('Button pressed')}
+      />
+      <Button
+        title={I18n.t('settings.connectSensor')}
         onPress={() => Alert.alert('Button pressed')}
       />
     </View>
