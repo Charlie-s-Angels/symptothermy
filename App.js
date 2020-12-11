@@ -2,10 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 import I18n from './i18n/locales';
-import Graph from './components/Graph';
+import GraphScreen from './components/GraphScreen';
+import SettingsScreen from './components/SettingsScreen';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 
 
 const listLanguage = [
@@ -19,8 +21,9 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Graph} />
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Graph" component={GraphScreen} />
+        <Stack.Screen name="Settings" component={SettingsScreen} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>

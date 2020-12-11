@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar } from 'react-native';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Button } from 'react-native';
 
 import Day from '../Day';
 
@@ -64,7 +64,7 @@ const current_cycle_values = [
 		hour: '8h',
 		day: 'F'
 	},
-	
+
 ];
 
 const InvertValues = (values) => {
@@ -76,11 +76,15 @@ const InvertValues = (values) => {
 	return inverted_array;
 }
 
-const Graph = () => {
+const GraphScreen = ({ navigation }) => {
     const renderItem = ({ item }) => <Day hour={item.hour} day={item.day}/>;
 
     return (
       <SafeAreaView style={styles.container}>
+      <Button
+        title="Go to Settings"
+        onPress={() => navigation.navigate('Settings')}
+      />
         <FlatList data={InvertValues(current_cycle_values)} renderItem={renderItem} keyExtractor={item => item.id} horizontal inverted />
       </SafeAreaView>
     );
@@ -93,4 +97,4 @@ const styles = StyleSheet.create({
 		},
   });
 
-export default Graph;
+export default GraphScreen;
