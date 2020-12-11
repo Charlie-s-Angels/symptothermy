@@ -3,6 +3,9 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 import I18n from './i18n/locales';
 import Graph from './components/Graph';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 
 const listLanguage = [
@@ -11,15 +14,20 @@ const listLanguage = [
 ]
 
 
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Graph />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Graph} />
+      </Stack.Navigator>
+      <StatusBar style="auto" />
+    </NavigationContainer>
 
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
