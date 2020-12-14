@@ -5,15 +5,15 @@ import I18n from '../../i18n/locales';
 const SettingsScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity  onPress={() => Alert.alert('Button pressed')} style={styles.appButtonContainer}>
+      <TouchableOpacity  onPress={() => Alert.alert('Button pressed')} >
         <Text style={styles.appButtonProfile}>Profil</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity  onPress={() => Alert.alert('Button pressed')} style={styles.appButtonContainer}>
+      <TouchableOpacity  onPress={() => Alert.alert('Button pressed')} >
           <Text style={styles.appButtonNotification}>Notification</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity  onPress={() => Alert.alert('Button pressed')} style={styles.appButtonContainer}>
+      <TouchableOpacity  onPress={() => Alert.alert('Button pressed')} >
           <Text style={styles.appButtonSensor}>Connect My Sensor</Text>
       </TouchableOpacity>    
     </View>
