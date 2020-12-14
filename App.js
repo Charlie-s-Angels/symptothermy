@@ -8,24 +8,59 @@ import LearnScreen from './components/LearnScreen';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-
+import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
 
 const listLanguage = [
-  {key:'en', label:'en'},
-  {key:'fr', label:'fr'},
+  { key: 'en', label: 'en' },
+  { key: 'fr', label: 'fr' },
 ]
 
 
-const Tab = createMaterialTopTabNavigator();
+const Tab = createMaterialTopTabNavigator(
+
+
+);
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator initialRouteName="Graph">
-        <Tab.Screen name="Graph" component={GraphScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-        <Tab.Screen name="Learn" component={LearnScreen} />
+    <NavigationContainer >
+      <Tab.Navigator
+        style={styles.Navigator}
+        initialRouteName="Graph"
+        tabBarOptions={{
+          showIcon: true,
+        }}>
+
+        <Tab.Screen name="Graph"
+          component={GraphScreen}
+          options={{
+            tabBarLabel: 'Graph',
+            tabBarIcon: ({ color }) => (
+              <FontAwesome name="bar-chart" size={28} color="black" />
+            ),
+          }}
+
+        />
+        <Tab.Screen name="Settings"
+          component={SettingsScreen}
+          options={{
+            tabBarLabel: 'Settings',
+            tabBarIcon: ({ color }) => (
+              <FontAwesome name="user-o" size={28} color="black" />
+            ),
+          }}
+        />
+        <Tab.Screen name="Learn"
+          component={LearnScreen}
+          options={{
+            tabBarLabel: 'Learn',
+            tabBarIcon: ({ color }) => (
+              <Ionicons name="md-book" size={30} color="black" />
+            ),
+          }}
+        />
       </Tab.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
@@ -33,22 +68,16 @@ const App = () => {
   );
 }
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: StatusBar.currentHeight || 0,
+    backgroundColor: "#241CC4",
   },
-  title: {
-    fontSize: 35,
-    color: 'blue',
-  },
-  text: {
-    fontSize: 25,
-    color: 'grey',
+  Navigator: {
+    marginTop: 30,
   }
 });
+
 
 export default App;
