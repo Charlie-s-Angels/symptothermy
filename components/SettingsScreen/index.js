@@ -1,21 +1,25 @@
 import React from 'react';
-import { View, Button, StatusBar, StyleSheet, Alert, TouchableOpacity, Text} from 'react-native';
+import { View, Button, StatusBar, StyleSheet, Alert, TouchableOpacity, Text } from 'react-native';
 import I18n from '../../i18n/locales';
+import { FontAwesome } from '@expo/vector-icons';
 
 const SettingsScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity  onPress={() => Alert.alert('Button pressed')} >
+      <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
         <Text style={styles.appButtonProfile}>Profil</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity  onPress={() => Alert.alert('Button pressed')} >
-          <Text style={styles.appButtonNotification}>Notification</Text>
+      <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
+        <Text style={styles.appButtonNotification}>Notification</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity  onPress={() => Alert.alert('Button pressed')} >
-          <Text style={styles.appButtonSensor}>Connect My Sensor</Text>
-      </TouchableOpacity>    
+      <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
+
+        <Text style={styles.appButtonSensor}>
+        <FontAwesome name="bluetooth-b" size={30} color="black" />
+        Connect My Sensor</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -24,7 +28,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,
-    backgroundColor : "#241CC4",
+    backgroundColor: "#241CC4",
   },
   appButtonProfile: {
     fontSize: 18,
@@ -41,7 +45,7 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
     borderRadius: 10,
   },
-appButtonNotification: {
+  appButtonNotification: {
     fontSize: 18,
     color: "gray",
     fontWeight: "bold",
@@ -57,7 +61,7 @@ appButtonNotification: {
     borderRadius: 10,
   },
 
-appButtonSensor: {
+  appButtonSensor: {
     fontSize: 18,
     color: "gray",
     fontWeight: "bold",
@@ -73,8 +77,8 @@ appButtonSensor: {
     borderRadius: 10,
   },
 
-  appButtonContainer:{
-    
+  appButtonContainer: {
+
   }
 });
 export default SettingsScreen;
