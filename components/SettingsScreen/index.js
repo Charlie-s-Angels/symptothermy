@@ -17,7 +17,7 @@ const SettingsScreen = ({ navigation }) => {
       <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
 
         <Text style={styles.appButtonSensor}>
-        <FontAwesome name="bluetooth-b" size={30} color="black" />
+          <FontAwesome name="bluetooth-b" size={30} color="black" />
         Connect My Sensor</Text>
       </TouchableOpacity>
     </View>

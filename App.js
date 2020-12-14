@@ -13,8 +13,8 @@ import { FontAwesome } from '@expo/vector-icons';
 
 
 const listLanguage = [
-  {key:'en', label:'en'},
-  {key:'fr', label:'fr'},
+  { key: 'en', label: 'en' },
+  { key: 'fr', label: 'fr' },
 ]
 
 
@@ -27,39 +27,39 @@ const App = () => {
   return (
     <NavigationContainer >
       <Tab.Navigator
-      style={styles.Navigator}
-      initialRouteName="Graph"
-      tabBarOptions={{
-        showIcon: true,
-  }}>
+        style={styles.Navigator}
+        initialRouteName="Graph"
+        tabBarOptions={{
+          showIcon: true,
+        }}>
 
         <Tab.Screen name="Graph"
-        component={GraphScreen}
-        options={{
+          component={GraphScreen}
+          options={{
             tabBarLabel: 'Graph',
             tabBarIcon: ({ color }) => (
               <FontAwesome name="bar-chart" size={28} color="black" />
-          ),
-           }}
+            ),
+          }}
 
         />
         <Tab.Screen name="Settings"
-        component={SettingsScreen}
-        options={{
+          component={SettingsScreen}
+          options={{
             tabBarLabel: 'Settings',
             tabBarIcon: ({ color }) => (
               <FontAwesome name="user-o" size={28} color="black" />
-          ),
-           }}
-         />
+            ),
+          }}
+        />
         <Tab.Screen name="Learn"
-        component={LearnScreen}
+          component={LearnScreen}
           options={{
             tabBarLabel: 'Learn',
             tabBarIcon: ({ color }) => (
               <Ionicons name="md-book" size={30} color="black" />
-          ),
-           }}
+            ),
+          }}
         />
       </Tab.Navigator>
       <StatusBar style="auto" />
