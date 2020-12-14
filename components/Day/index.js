@@ -1,9 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Day = ({ hour, timestamp }) => {
+const Day = ({ hour, timestamp, index }) => {
 	const date = new Date(timestamp * 1000);
-	const formatedDate = date.getDate() + '/' + date.getMonth();
 
 	const day = () => {
 		switch (date.getDay()) {
@@ -25,14 +24,22 @@ const Day = ({ hour, timestamp }) => {
 				return "R"; 
 		};
 	};
-	
+
+	const showDate = () => {
+		if (date.getDate() % 5 === 0) {
+			return <Text style={[styles.dateStyle, styles.bold]}>{`${date.getDate()}/${date.getMonth() + 1}`}</Text>;
+		} else {
+			return <Text style={styles.dateStyle}>{index + 1}</Text>;
+		}
+	};
+
 	return (
 		<View style={styles.container}>
 			<View style={day()==="S"? [styles.alldays, styles.weekend] : [styles.alldays, styles.week]}>
-				<Text style={styles.hour}>{hour}</Text>
-				<Text style={styles.dateStyle}>{day()}</Text>
+				<Text style={styles.hour}>{`${date.getUTCHours()}:${date.getMinutes()}`}</Text>
+				<Text style={styles.dayStyle}>{day()}</Text>
 			</View>
-			<Text style={styles.dateStyle}>{formatedDate}</Text>
+			{showDate()}
 		</View>
 	);
 };
@@ -62,10 +69,17 @@ const styles = StyleSheet.create({
 	hour: {
 		fontSize: 12,
 	},
-	dateStyle: {
+	dayStyle: {
 		textAlign: 'center',
 		color: "#3dc1d3"
 	},
+	dateStyle: {
+		textAlign: 'center',
+		color: "#000",
+	},
+	bold: {
+		fontWeight: '800',
+	}
 });
 
 export default Day;
