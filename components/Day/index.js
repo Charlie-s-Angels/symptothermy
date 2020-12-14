@@ -1,45 +1,68 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Day = ({ hour, day }) => (
+const Day = ({ index, hour, timestamp }) => {
+	const date = new Date(timestamp * 1000);
+	const formatedDate = date.getDate() + '/' + date.getMonth();
 
-	<View style={day==='S'? styles.weekend : styles.week}>
-		<Text style={styles.hour}>{hour}</Text>
-		<Text style={styles.dayLetter}>{day}</Text>
-	</View>
-);
+	const day = () => {
+		console.log(date.getDay());
+		switch (date.getDay()) {
+			case 0 || 6:
+				return "S";
+			case 1:
+				return "M";
+			case 2 || 4:
+				return "T";
+			case 3:
+				return "W";
+			case 5:
+				return "F";
+			default:
+				return "R"; 
+		};
+	};
+
+	return (
+		<View style={styles.container}>
+			<View style={day==='S'? [styles.alldays, styles.weekend] : [styles.alldays, styles.week]}>
+				<Text style={styles.hour}>{hour}</Text>
+				<Text style={styles.dateStyle}>{day}</Text>
+			</View>
+			<Text style={styles.dateStyle}>{formatedDate}</Text>
+		</View>
+	);
+};
 
 const styles = StyleSheet.create({
-	week: {
+	container: {
+		marginVertical: 8,
+		height: "60%",
+	},
+	alldays: {
 		flexDirection: 'column',
 		justifyContent: 'space-between',
 		alignItems: 'center',
-		backgroundColor: '#546de5',
+		height: "90%",
 		minWidth: 35,
-		marginVertical: 8,
+		padding: 4,
 		borderWidth: 1,
-		borderColor: '#fff',
-		height: '50%',
-		padding: 5,
+		borderColor: "#fff",
+	},
+	week: {
+		backgroundColor: '#546de5',
 	},
 	weekend: {
-		flexDirection: 'column',
-		justifyContent: 'space-between',
-		alignItems: 'center',
+		minHeight: 10,
 		backgroundColor: '#778beb',
-		minWidth: 35,
-		marginVertical: 8,
-		borderWidth: 1,
-		borderColor: '#fff',
-		height: '50%',
-		padding: 5,
 	},
 	hour: {
 		fontSize: 12,
 	},
-	dayLetter: {
+	dateStyle: {
+		textAlign: 'center',
 		color: "#3dc1d3"
-	}
+	},
 });
 
 export default Day;
