@@ -1,33 +1,36 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Day = ({ index, hour, timestamp }) => {
+const Day = ({ hour, timestamp }) => {
 	const date = new Date(timestamp * 1000);
 	const formatedDate = date.getDate() + '/' + date.getMonth();
 
 	const day = () => {
-		console.log(date.getDay());
 		switch (date.getDay()) {
-			case 0 || 6:
+			case 0:
 				return "S";
 			case 1:
 				return "M";
-			case 2 || 4:
+			case 2:
 				return "T";
 			case 3:
 				return "W";
+			case 4:
+				return "T";
 			case 5:
 				return "F";
+			case 6:
+				return "S";
 			default:
 				return "R"; 
 		};
 	};
-
+	
 	return (
 		<View style={styles.container}>
-			<View style={day==='S'? [styles.alldays, styles.weekend] : [styles.alldays, styles.week]}>
+			<View style={day()==="S"? [styles.alldays, styles.weekend] : [styles.alldays, styles.week]}>
 				<Text style={styles.hour}>{hour}</Text>
-				<Text style={styles.dateStyle}>{day}</Text>
+				<Text style={styles.dateStyle}>{day()}</Text>
 			</View>
 			<Text style={styles.dateStyle}>{formatedDate}</Text>
 		</View>
