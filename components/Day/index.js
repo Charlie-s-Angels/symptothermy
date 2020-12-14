@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import Temp from '../Temperature';
 
-const Day = ({ hour, timestamp, index }) => {
+const Day = ({ temp, timestamp, index }) => {
 	const date = new Date(timestamp * 1000);
 
 	const day = () => {
@@ -38,6 +39,7 @@ const Day = ({ hour, timestamp, index }) => {
 			<View style={day()==="S"? [styles.alldays, styles.weekend] : [styles.alldays, styles.week]}>
 				<Text style={styles.hour}>{`${date.getUTCHours()}:${date.getMinutes()}`}</Text>
 				<Text style={styles.dayStyle}>{day()}</Text>
+				<Temp temp={temp} />
 			</View>
 			{showDate()}
 		</View>
