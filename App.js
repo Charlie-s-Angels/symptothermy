@@ -7,7 +7,7 @@ import SettingsScreen from './components/SettingsScreen';
 import LearnScreen from './components/LearnScreen';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 
 
@@ -17,16 +17,16 @@ const listLanguage = [
 ]
 
 
-const Stack = createStackNavigator();
+const Tab = createMaterialTopTabNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Graph">
-        <Stack.Screen name="Graph" component={GraphScreen} />
-        <Stack.Screen name="Settings" component={SettingsScreen} />
-        <Stack.Screen name="Learn" component={LearnScreen} />
-      </Stack.Navigator>
+      <Tab.Navigator initialRouteName="Graph">
+        <Tab.Screen name="Graph" component={GraphScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Learn" component={LearnScreen} />
+      </Tab.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
 
