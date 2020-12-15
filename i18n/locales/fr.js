@@ -7,7 +7,7 @@ export default {
 
   welcomepage: {
     title: 'Bienvenue',
-    choiceDatas: 'Avant de commencer, nous préservons ctre vie privée et vos données n\'appartiennent qu\'à vous: où souhaitez-vous les stocker?',
+    choiceDatas: 'Avant de commencer, nous préservons votre vie privée et vos données n\'appartiennent qu\'à vous : où souhaitez-vous les stocker ?',
     cloud: 'Cloud',
     phone: 'Télépone',
     cloudSentence: 'Vous permet d\'accéder à vos données de n\'importe où et même de les partager avec votre partenaire.',
@@ -16,7 +16,7 @@ export default {
   },
   welcomepage2: {
     title: 'Bienvenue',
-    choiceDatas: 'Nous sommes heureux de vous avoir à bord. Apprenons à mieux nous connaître: comment aimeriez-vous utiliser cette application?',
+    choiceDatas: 'Nous sommes heureux de vous avoir à bord. Apprenons à mieux nous connaître: comment aimeriez-vous utiliser cette application ?',
     pregnancy: 'Grossesse',
     alternative: 'Contrôle des naissances alternatif',
     aboutYourself: 'En savoir plus sur moi',
@@ -40,7 +40,7 @@ export default {
     infoDatas: 'Ces données vous appartiennent et ne seront utilisées que par l\'application elle-même pour améliorer votre expérience utilisateur.',
     alreadyUse: 'Nous sommes heureux de savoir que vous utilisez déjà la symptothermie dans votre vie quotidienne. Veuillez ajouter vos informations précédentes ci-dessous afin que nous puissions en tenir compte.',
     hormonalControl: 'Utilisez-vous un contraceptif hormonal ?',
-    hormonalStopped: 'Depuis combien de temps avez-vous cessé d\'utiliser un contraceptif hormonal?',
+    hormonalStopped: 'Depuis combien de temps avez-vous cessé d\'utiliser un contraceptif hormonal ?',
     cycleaverageTime: 'Durée moyenne du cycle',
     nubmerOfDays: 'Nombre de jours',
     nubmerOfCycles: 'Nombre de cycles',
@@ -61,7 +61,7 @@ export default {
   },
 
   graph: {
-    myGraph: 'Mon Graph',
+    title: 'Mon Graph',
     firstPeriodDay: 'Premier jour de règles',
     mostRecent: 'Plus recent',
     endCycle: 'Fin du cycle',
@@ -70,12 +70,14 @@ export default {
   },
 
   settings: {
+    title: 'Paramètres',
     profil: 'Profil',
     notifications: 'Notifications',
     connectSensor: 'Connecter mon capteur'
   },
 
   learn: {
+    title: 'Documentation',
     article: 'Article'
   }
 

@@ -6,11 +6,11 @@ const LearnScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
-        <Text style={styles.appButtonArticle}>Article 1</Text>
+        <Text style={styles.appButtonArticle}>{I18n.t('learn.article')}</Text>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
-        <Text style={styles.appButtonArticle}>Article 2</Text>
+        <Text style={styles.appButtonArticle}>{I18n.t('learn.article')}</Text>
       </TouchableOpacity>
     </View>
   );

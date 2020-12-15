@@ -11,17 +11,12 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
-
 const listLanguage = [
   { key: 'en', label: 'en' },
   { key: 'fr', label: 'fr' },
 ]
 
-
-const Tab = createMaterialTopTabNavigator(
-
-
-);
+const Tab = createMaterialTopTabNavigator();
 
 const App = () => {
   return (
@@ -36,7 +31,7 @@ const App = () => {
         <Tab.Screen name="Graph"
           component={GraphScreen}
           options={{
-            tabBarLabel: 'Graph',
+            tabBarLabel: I18n.t('graph.title'),
             tabBarIcon: ({ color }) => (
               <FontAwesome name="bar-chart" size={28} color="black" />
             ),
@@ -46,7 +41,7 @@ const App = () => {
         <Tab.Screen name="Settings"
           component={SettingsScreen}
           options={{
-            tabBarLabel: 'Settings',
+            tabBarLabel: I18n.t('settings.title'),
             tabBarIcon: ({ color }) => (
               <FontAwesome name="user-o" size={28} color="black" />
             ),
@@ -55,7 +50,7 @@ const App = () => {
         <Tab.Screen name="Learn"
           component={LearnScreen}
           options={{
-            tabBarLabel: 'Learn',
+            tabBarLabel: I18n.t('learn.title'),
             tabBarIcon: ({ color }) => (
               <Ionicons name="md-book" size={30} color="black" />
             ),
