@@ -3,7 +3,7 @@ import Graph from '../../components/Graph' ;
 import { View, Text } from 'react-native';
 
 const MyGraph = () => {
-  
+
   return (
     <Graph />
   );

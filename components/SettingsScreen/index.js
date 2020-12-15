@@ -3,7 +3,7 @@ import { View, Button, StatusBar, StyleSheet, Alert, TouchableOpacity, Text } fr
 import I18n from '../../tools/i18n/locales';
 import { FontAwesome } from '@expo/vector-icons';
 
-const Settings = ({ navigation }) => {
+const SettingsScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
@@ -82,4 +82,4 @@ const styles = StyleSheet.create({
 
   }
 });
-export default Settings;
+export default SettingsScreen;
