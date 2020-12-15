@@ -7,7 +7,7 @@ import DayDate from './DayDate';
 const Day = ({ temp, timestamp, index }) => {
 	const date = new Date(timestamp * 1000);
 
-	const day = () => {
+	const dayLetter = () => {
 		switch (date.getDay()) {
 			case 0:
 				return "S";
@@ -30,9 +30,9 @@ const Day = ({ temp, timestamp, index }) => {
 
 	return (
 		<View style={styles.container}>
-			<View style={day()==="S"? [styles.alldays, styles.weekend] : [styles.alldays, styles.week]}>
+			<View style={dayLetter()==="S"? [styles.alldays, styles.weekend] : [styles.alldays, styles.week]}>
 				<Text style={styles.hour}>{`${date.getUTCHours()}:${date.getMinutes()}`}</Text>
-				<Text style={styles.day}>{day()}</Text>
+				<Text style={styles.day}>{dayLetter()}</Text>
 				<Temp temp={temp} />
 			</View>
 			<DayDate date={date} cycleDay={index}/>
