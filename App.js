@@ -3,14 +3,13 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 import I18n from './i18n/locales';
 import GraphScreen from './components/GraphScreen';
-import SettingsScreen from './components/SettingsScreen';
-import LearnScreen from './components/LearnScreen';
+import Settings from './screens/Settings';
+import Learn from './screens/Learn';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
-
 const listLanguage = [
   { key: 'en', label: 'en' },
   { key: 'fr', label: 'fr' },
@@ -39,7 +38,7 @@ const App = () => {
 
         />
         <Tab.Screen name="Settings"
-          component={SettingsScreen}
+          component={Settings}
           options={{
             tabBarLabel: I18n.t('settings.title'),
             tabBarIcon: ({ color }) => (
@@ -48,7 +47,7 @@ const App = () => {
           }}
         />
         <Tab.Screen name="Learn"
-          component={LearnScreen}
+          component={Learn}
           options={{
             tabBarLabel: I18n.t('learn.title'),
             tabBarIcon: ({ color }) => (

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StatusBar, StyleSheet, Alert, TouchableOpacity, Text } from 'react-native';
 import I18n from '../../i18n/locales';
 
-const LearnScreen = ({ navigation }) => {
+const Learn = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
   },
 
 });
-export default LearnScreen;
+export default Learn;
