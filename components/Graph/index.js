@@ -71,13 +71,13 @@ const current_cycle_values = [
   },
 ];
 
-const GraphScreen = ({ navigation }) => {
+const Graph = ({ navigation }) => {
   const renderItem = ({ item }) => <Day temp={item.temp} timestamp={item.timestamp} index={current_cycle_values.indexOf(item)} />;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <FlatList data={current_cycle_values} renderItem={renderItem} keyExtractor={item => item.id} horizontal initialScrollIndex={current_cycle_values.length - 1} />
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -88,4 +88,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GraphScreen;
+export default Graph;

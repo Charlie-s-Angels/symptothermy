@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 import I18n from './i18n/locales';
-import GraphScreen from './components/GraphScreen';
+import MyGraph from './screens/MyGraph';
 import Settings from './screens/Settings';
 import Learn from './screens/Learn';
 import 'react-native-gesture-handler';
@@ -28,7 +28,7 @@ const App = () => {
         }}>
 
         <Tab.Screen name="Graph"
-          component={GraphScreen}
+          component={MyGraph}
           options={{
             tabBarLabel: I18n.t('graph.title'),
             tabBarIcon: ({ color }) => (
