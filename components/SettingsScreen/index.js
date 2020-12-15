@@ -7,18 +7,19 @@ const SettingsScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
-        <Text style={styles.appButtonProfile}>Profil</Text>
+        <Text style={styles.appButtonProfile}>{I18n.t('settings.profil')}</Text>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
-        <Text style={styles.appButtonNotification}>Notification</Text>
+        <Text style={styles.appButtonNotification}>{I18n.t('settings.notifications')}</Text>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
 
         <Text style={styles.appButtonSensor}>
           <FontAwesome name="bluetooth-b" size={30} color="black" />
-        Connect My Sensor</Text>
+          {I18n.t('settings.connectSensor')}
+        </Text>
       </TouchableOpacity>
     </View>
   );
