@@ -1,32 +1,36 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import config from '../../config';
 
+const mapTemp = (temp, tempMin, tempMax) => (
+    Math.round((temp - tempMin) * 100 / (tempMax - tempMin))
+);
 
 const Temp = ({ temp }) => {
-    const tempInPourcentage = mapTemp(temp, 35, 39, 0, 100);
+    const tempInPourcentage = mapTemp(temp, config.MIN_TEMP, config.MAX_TEMP);
     const tempBackgroundColor = "#3788aaff";
-
-    const styles = StyleSheet.create({
-        container: {
-            position: 'absolute',
-            bottom: `${tempInPourcentage}%`,
-            width: 15,
-            height: 15,
-            borderWidth: 1,
-            borderRadius: 8,
-            borderColor: "#eeeeee",
-            backgroundColor: tempBackgroundColor,
-        }
-    });
+    
+    const containerStyle = {
+        bottom: `${tempInPourcentage}%`,
+        backgroundColor: tempBackgroundColor,
+    };
     
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, containerStyle]}>
         </View>
     )
 };
 
-const mapTemp = (temp, in_min, in_max, out_min, out_max) => {
-    return Math.round((temp - in_min) * (out_max - out_min) / (in_max - in_min) + out_min);
-};
+const styles = StyleSheet.create({
+    container: {
+        position: 'absolute',
+        width: 15,
+        height: 15,
+        marginBottom: -7,
+        borderWidth: 1,
+        borderRadius: 8,
+        borderColor: "#eeeeee",
+    }
+});
 
 export default Temp;
