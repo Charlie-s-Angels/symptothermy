@@ -17,7 +17,7 @@ const Graph = ({ navigation }) => {
     .then((result) => setCurrentCycleData(result))
     .catch((error) => console.error(error))
     .finally(() => setLoading(false));
-  }, [];
+  }, []);
 
   const renderItem = ({ item }) => <Day temp={item.temp} timestamp={item.timestamp} index={currentCycleData.indexOf(item)} />;
 
