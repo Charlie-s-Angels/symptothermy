@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,
-    backgroundColor: "#241CC4",
+    backgroundColor: "#546de5",
   },
   appButtonProfile: {
     fontSize: 18,

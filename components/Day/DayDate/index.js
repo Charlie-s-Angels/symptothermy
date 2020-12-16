@@ -11,12 +11,12 @@ const DayDate = ({ date, cycleDay }) => {
 
 const styles = StyleSheet.create({
     date: {
-		textAlign: 'center',
-		color: "#000",
+      textAlign: 'center',
+      color: "#eeeeee",
     },
     bold: {
-		fontWeight: '700',
-	}
+      fontWeight: '700',
+    }
 });
 
 export default DayDate;
