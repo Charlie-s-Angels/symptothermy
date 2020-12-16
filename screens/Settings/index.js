@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Button, StatusBar, StyleSheet, Alert, TouchableOpacity, Text } from 'react-native';
-import I18n from '../../i18n/locales';
+import I18n from '../../tools/i18n/locales';
 import { FontAwesome } from '@expo/vector-icons';
 
 const Settings = ({ navigation }) => {
