@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import config from '../config';
 
 const useGetData = (entity) => {
-    const [isLoading, setLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
 
@@ -22,9 +22,9 @@ const useGetData = (entity) => {
             setError(error.message);
         })
         .finally(() => {
-            setLoading(false);
+            setIsLoading(false);
         });
-    }, []);    
+    }, []);
 
     return {
         isLoading,
