@@ -1,30 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, FlatList, StyleSheet, StatusBar, ActivityIndicator } from 'react-native';
 
-//import config from '../../config';
 import Day from '../Day';
+import useGetData from '../../hooks/useGetData';
 
-//const currentCycleData = () => (
-//  config.FAKE_CYCLE_DATA
-//);
+const Graph = () => {
+  const { isLoading, data } = useGetData("temperatures");
 
-const Graph = ({ navigation }) => {
-  const [isLoading, setLoading] = useState(true);
-  const [currentCycleData, setCurrentCycleData] = useState([]);
-
-  useEffect(() => {
-    getData()
-    .then((result) => setCurrentCycleData(result))
-    .catch((error) => console.error(error))
-    .finally(() => setLoading(false));
-  }, []);
-
-  const renderItem = ({ item }) => <Day temp={item.temp} timestamp={item.timestamp} index={currentCycleData.indexOf(item)} />;
+  const renderItem = ({ item }) => (
+    <Day temp={item.temperature} timestamp={item.timestamp} index={data.indexOf(item)} />
+  );
 
   return (
     <View style={styles.container}>
       {isLoading ? <ActivityIndicator/> : (
-        <FlatList data={currentCycleData} renderItem={renderItem} keyExtractor={item => item.id} horizontal initialScrollIndex={currentCycleData.length - 1} />
+        <FlatList 
+          data={data}
+          renderItem={renderItem} 
+          keyExtractor={item => `${item.id}`} 
+          horizontal
+          initialScrollIndex={data.length - 1}
+        />
       )}
     </View>
   );

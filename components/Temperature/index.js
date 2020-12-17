@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import config from '../../config';
 
-const handleIfExtremTemp = (temp) => {
+const handleIfExtremeTemp = (temp) => {
     if (temp > config.MAX_TEMP) {
         return config.MAX_TEMP;
     } else if (temp < config.MIN_TEMP) {
@@ -13,7 +13,7 @@ const handleIfExtremTemp = (temp) => {
 };
 
 const mapTemp = (temp, tempMin, tempMax) => (
-    Math.round((handleIfExtremTemp(temp) - tempMin) * 100 / (tempMax - tempMin))
+    Math.round((handleIfExtremeTemp(temp) - tempMin) * 100 / (tempMax - tempMin))
 );
 
 const Temp = ({ temp }) => {

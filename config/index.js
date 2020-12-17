@@ -3,6 +3,7 @@ const deepFreeze = require('deep-freeze');
 const config = {
     MAX_TEMP: 39,
     MIN_TEMP: 35,
+    API_URL: "https://strapi-sympto-api.herokuapp.com",
     FAKE_CYCLE_DATA: [
         {
             id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
