@@ -43,6 +43,7 @@ const Day = ({ temp, timestamp, index }) => {
 const styles = StyleSheet.create({
 	container: {
 		marginVertical: 8,
+		flex: 1,
 		height: "60%",
 	},
 	alldays: {
@@ -63,6 +64,7 @@ const styles = StyleSheet.create({
 	},
 	hour: {
 		fontSize: 12,
+		color: "#eeeeee",
 		marginVertical: 4,
 	},
 	day: {

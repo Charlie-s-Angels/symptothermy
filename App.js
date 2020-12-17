@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
-import I18n from './i18n/locales';
+import I18n from './tools/i18n/locales';
 import MyGraph from './screens/MyGraph';
 import Settings from './screens/Settings';
 import Learn from './screens/Learn';
@@ -10,6 +10,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+
 const listLanguage = [
   { key: 'en', label: 'en' },
   { key: 'fr', label: 'fr' },
