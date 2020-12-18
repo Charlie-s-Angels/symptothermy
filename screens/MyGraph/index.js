@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import config from "../../config";
+
 import Graph from '../../components/Graph' ;
 import Button from "../../components/Button";
-
-import config from "../../config";
 
 const MyGraph = () => {
 

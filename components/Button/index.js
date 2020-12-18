@@ -1,14 +1,21 @@
 import React from 'react';
 import { TouchableOpacity, Text, View, Alert, StyleSheet } from 'react-native';
 import I18n from '../../tools/i18n/locales';
+import { FontAwesome } from '@expo/vector-icons';
 
 import config from "../../config";
 
-const Button = ({ text, onPress }) => {
+const Button = ({ text, icon, onPress, specificStyle = {} }) => {
+    const addIcon = <FontAwesome name={icon} size={25} color={config.DARK_GRAY} />;
+
+
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={onPress} >
-                <Text style={styles.button}>{I18n.t(text)}</Text>
+                <Text style={[styles.button, specificStyle]}>
+                    {icon && addIcon}
+                    {I18n.t(text)}
+                </Text>
             </TouchableOpacity>
         </View>
     )
@@ -20,6 +27,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: "center",
+        paddingVertical: 15,
     },    
     button: {
         fontSize: 18,
