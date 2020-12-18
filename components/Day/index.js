@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 
 import Temp from '../Temperature';
 import DayDate from './DayDate';
@@ -42,11 +42,14 @@ const Day = ({ item, index }) => {
 
 	return (
 		<View style={styles.container}>
-			<View style={[styles.alldays, dayLetter()==="S"? styles.weekend : styles.week]}>
+			<TouchableOpacity 
+				style={[styles.alldays, dayLetter()==="S"? styles.weekend : styles.week]}
+				onPress={() => Alert.alert("Button pressed")}
+			>
 				<Text style={styles.hour}>{`${date.getUTCHours()}:${date.getMinutes()}`}</Text>
 				<Text style={[styles.day, isDataRealStyle()]}>{dayLetter()}</Text>
 				<Temp temp={item.temperature} isDataReal={item.isDataReal} />
-			</View>
+			</TouchableOpacity>
 			<DayDate date={date} cycleDay={index}/>
 		</View>
 	);

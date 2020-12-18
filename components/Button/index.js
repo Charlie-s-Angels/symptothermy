@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, View, Alert, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, View, StyleSheet } from 'react-native';
 import I18n from '../../tools/i18n/locales';
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -7,7 +7,6 @@ import config from "../../config";
 
 const Button = ({ text, icon, onPress, specificStyle = {} }) => {
     const addIcon = <FontAwesome name={icon} size={25} color={config.DARK_GRAY} />;
-
 
     return (
         <View style={styles.container}>
