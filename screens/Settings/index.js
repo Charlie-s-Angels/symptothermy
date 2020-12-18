@@ -1,26 +1,30 @@
 import React from 'react';
-import { View, Button, StatusBar, StyleSheet, Alert, TouchableOpacity, Text } from 'react-native';
-import I18n from '../../tools/i18n/locales';
-import { FontAwesome } from '@expo/vector-icons';
+import { View, StatusBar, StyleSheet, Alert } from 'react-native';
+import config from '../../config';
 
-const Settings = ({ navigation }) => {
+import Button from "../../components/Button";
+
+const Settings = () => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
-        <Text style={styles.appButtonProfile}>{I18n.t('settings.profil')}</Text>
-      </TouchableOpacity>
+      <View style={styles.flex}>
+        <Button
+          onPress={() => Alert.alert('Button pressed')}
+          text="settings.profil"
+        />
 
-      <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
-        <Text style={styles.appButtonNotification}>{I18n.t('settings.notifications')}</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
-
-        <Text style={styles.appButtonSensor}>
-          <FontAwesome name="bluetooth-b" size={30} color="black" />
-          {I18n.t('settings.connectSensor')}
-        </Text>
-      </TouchableOpacity>
+        <Button
+          onPress={() => Alert.alert('Button pressed')}
+          text="settings.notifications"
+        />
+      </View>
+      <View style={styles.flex}>
+        <Button
+            onPress={() => Alert.alert('Button pressed')}
+            text="settings.connectSensor"
+            icon="bluetooth-b"
+        />
+      </View>
     </View>
   );
 };
@@ -28,58 +32,11 @@ const Settings = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-    backgroundColor: "#546de5",
+    justifyContent: "space-between",
+    backgroundColor: config.BLUE,
   },
-  appButtonProfile: {
-    fontSize: 18,
-    color: "gray",
-    fontWeight: "bold",
-    alignSelf: "center",
-    textAlign: "center",
-    textTransform: "uppercase",
-    backgroundColor: "#fff",
-    width: 300,
-    marginTop: 25,
-    marginBottom: 10,
-    paddingTop: 25,
-    paddingBottom: 30,
-    borderRadius: 10,
+  flex: {
+    flex: 1
   },
-  appButtonNotification: {
-    fontSize: 18,
-    color: "gray",
-    fontWeight: "bold",
-    alignSelf: "center",
-    textAlign: "center",
-    textTransform: "uppercase",
-    backgroundColor: "#fff",
-    width: 300,
-    marginTop: 10,
-    marginBottom: 200,
-    paddingTop: 25,
-    paddingBottom: 30,
-    borderRadius: 10,
-  },
-
-  appButtonSensor: {
-    fontSize: 18,
-    color: "gray",
-    fontWeight: "bold",
-    alignSelf: "center",
-    textAlign: "center",
-    textTransform: "uppercase",
-    backgroundColor: "#fff",
-    width: 300,
-    marginTop: 10,
-    marginBottom: 25,
-    paddingTop: 25,
-    paddingBottom: 30,
-    borderRadius: 10,
-  },
-
-  appButtonContainer: {
-
-  }
 });
 export default Settings;

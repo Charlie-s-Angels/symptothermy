@@ -1,17 +1,24 @@
 import React from 'react';
-import { View, StatusBar, StyleSheet, Alert, TouchableOpacity, Text } from 'react-native';
-import I18n from '../../tools/i18n/locales';
+import { View, StatusBar, StyleSheet, Alert } from 'react-native';
+import config from "../../config";
 
-const Learn = ({ navigation }) => {
+import Button from "../../components/Button";
+
+
+const Learn = () => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
-        <Text style={styles.appButtonArticle}>{I18n.t('learn.article')}</Text>
-      </TouchableOpacity>
+      <Button
+        onPress={() => Alert.alert('Button pressed')}
+        text="learn.article"
+        specificStyle={styles.specificStyle}
+      />
 
-      <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
-        <Text style={styles.appButtonArticle}>{I18n.t('learn.article')}</Text>
-      </TouchableOpacity>
+      <Button
+        onPress={() => Alert.alert('Button pressed')}
+        text="learn.article"
+        specificStyle={styles.specificStyle}
+      />
     </View>
   );
 };
@@ -19,25 +26,14 @@ const Learn = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-    backgroundColor: "#546de5",
+    backgroundColor: config.BLUE,
   },
-
-  appButtonArticle: {
-    fontSize: 18,
-    color: "gray",
-    fontWeight: "bold",
-    alignSelf: "center",
-    textAlign: "center",
-    textTransform: "uppercase",
-    backgroundColor: "#fff",
-    width: 300,
+  specificStyle: {
     marginTop: 30,
     marginBottom: 30,
     paddingTop: 80,
     paddingBottom: 80,
-    borderRadius: 10,
-  },
-
+  }
 });
+
 export default Learn;
