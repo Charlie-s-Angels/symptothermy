@@ -3,9 +3,10 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import Temp from '../Temperature';
 import DayDate from './DayDate';
+import config from '../../config';
 
-const Day = ({ temp, timestamp, index }) => {
-	const date = new Date(timestamp * 1000);
+const Day = ({ item, index }) => {
+	const date = new Date(item.timestamp * 1000);
 
 	const dayLetter = () => {
 		switch (date.getDay()) {
@@ -28,12 +29,23 @@ const Day = ({ temp, timestamp, index }) => {
 		};
 	};
 
+	const isDataRealStyle = () => {
+        if (item.isDataReal) {
+            return {
+				color: config.CURACAO
+            };
+		}
+		return {
+			color: config.ORANGE
+		}
+    };
+
 	return (
 		<View style={styles.container}>
-			<View style={dayLetter()==="S"? [styles.alldays, styles.weekend] : [styles.alldays, styles.week]}>
+			<View style={[styles.alldays, dayLetter()==="S"? styles.weekend : styles.week]}>
 				<Text style={styles.hour}>{`${date.getUTCHours()}:${date.getMinutes()}`}</Text>
-				<Text style={styles.day}>{dayLetter()}</Text>
-				<Temp temp={temp} />
+				<Text style={[styles.day, isDataRealStyle()]}>{dayLetter()}</Text>
+				<Temp temp={item.temperature} isDataReal={item.isDataReal} />
 			</View>
 			<DayDate date={date} cycleDay={index}/>
 		</View>
@@ -53,23 +65,23 @@ const styles = StyleSheet.create({
 		height: "90%",
 		minWidth: 35,
 		borderWidth: 1,
-		borderColor: "#fff",
+		borderColor: config.WHITE,
 	},
 	week: {
-		backgroundColor: '#546de5',
+		backgroundColor: config.BLUE,
 	},
 	weekend: {
 		minHeight: 10,
-		backgroundColor: '#778beb',
+		backgroundColor: config.LIGHT_BLUE,
 	},
 	hour: {
 		fontSize: 12,
-		color: "#eeeeee",
+		color: config.LIGHT_GRAY,
 		marginVertical: 4,
+		marginHorizontal: 2,
 	},
 	day: {
 		textAlign: 'center',
-		color: "#3dc1d3",
 		marginVertical: 4,
 	},
 });

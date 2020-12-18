@@ -7,6 +7,14 @@ const config = {
     MIN_TEMP: 35,
     API_URL: "https://strapi-sympto-api.herokuapp.com",
     FAKE_10_FUTURE_DATA: fakeFuturData(),
+    WHITE: "#fff",
+    BLACK: "#000",
+    LIGHT_GRAY: "#eeeeee",
+    BLUE: "#546de5",
+    LIGHT_BLUE: "#778beb",
+    ORANGE: "#f19066",
+    CURACAO: "#3dc1d3",
+
 };
 
 export default deepFreeze(config);

@@ -16,17 +16,27 @@ const mapTemp = (temp, tempMin, tempMax) => (
     Math.round((handleIfExtremeTemp(temp) - tempMin) * 100 / (tempMax - tempMin))
 );
 
-const Temp = ({ temp }) => {
+const Temp = ({ temp, isDataReal }) => {
     const tempInPourcentage = mapTemp(temp, config.MIN_TEMP, config.MAX_TEMP);
     const tempBackgroundColor = "#3788aaff";
     
-    const containerStyle = {
+    const setTempHeightOnGraph = {
         bottom: `${tempInPourcentage}%`,
-        backgroundColor: tempBackgroundColor,
+    };
+
+    const isDataRealStyle = () => {
+        if (isDataReal) {
+            return {
+                backgroundColor: tempBackgroundColor
+            };
+        }
+        return { 
+            borderStyle: "dashed"
+        };
     };
     
     return (
-        <View style={[styles.container, containerStyle]}>
+        <View style={[styles.container, setTempHeightOnGraph, isDataRealStyle()]}>
         </View>
     )
 };
@@ -39,7 +49,7 @@ const styles = StyleSheet.create({
         marginBottom: -7,
         borderWidth: 1,
         borderRadius: 8,
-        borderColor: "#eeeeee",
+        borderColor: config.LIGHT_GRAY,
     }
 });
 

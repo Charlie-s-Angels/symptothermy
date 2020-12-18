@@ -9,7 +9,7 @@ const Graph = () => {
   console.log(error);
 
   const renderItem = ({ item }) => (
-    <Day temp={item.temperature} timestamp={item.timestamp} index={data.indexOf(item)} />
+    <Day item={item} index={data.indexOf(item)} />
   );
 
   return (
