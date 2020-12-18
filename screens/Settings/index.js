@@ -7,7 +7,7 @@ import Button from "../../components/Button";
 const Settings = () => {
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.flex}>
         <Button
           onPress={() => Alert.alert('Button pressed')}
           text="settings.profil"
@@ -18,7 +18,7 @@ const Settings = () => {
           text="settings.notifications"
         />
       </View>
-      <View>
+      <View style={styles.flex}>
         <Button
             onPress={() => Alert.alert('Button pressed')}
             text="settings.connectSensor"
@@ -33,8 +33,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "space-between",
-    marginTop: StatusBar.currentHeight || 0,
     backgroundColor: config.BLUE,
-  }
+  },
+  flex: {
+    flex: 1
+  },
 });
 export default Settings;

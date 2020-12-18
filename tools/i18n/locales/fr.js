@@ -67,7 +67,7 @@ export default {
     endCycle: 'Fin du cycle',
     sorry: 'Désolé, cette fonctionnalité n\'est pas encore prête.',
     back: 'Retour',
-    newcycle: "Premier jour de règle",
+    newcycle: "Premier jour de règles",
   },
 
   settings: {
