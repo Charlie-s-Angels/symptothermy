@@ -14,7 +14,6 @@ const config = {
     LIGHT_BLUE: "#778beb",
     ORANGE: "#f19066",
     CURACAO: "#3dc1d3",
-
 };
 
 export default deepFreeze(config);

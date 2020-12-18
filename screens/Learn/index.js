@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StatusBar, StyleSheet, Alert, TouchableOpacity, Text } from 'react-native';
 import I18n from '../../tools/i18n/locales';
 
-const Learn = ({ navigation }) => {
+const Learn = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
