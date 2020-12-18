@@ -66,7 +66,8 @@ export default {
     mostRecent: 'Most recent',
     endCycle: 'End your cycle',
     sorry: 'Sorry, this feature is not ready yet.',
-    back: 'Back'
+    back: 'Back',
+    newcycle: "First period day",
   },
 
   settings: {

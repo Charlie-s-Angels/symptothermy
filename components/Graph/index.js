@@ -29,7 +29,7 @@ const Graph = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     marginTop: StatusBar.currentHeight || 0,
   },
 });

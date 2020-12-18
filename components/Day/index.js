@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
 	container: {
 		marginVertical: 8,
 		flex: 1,
-		height: "60%",
 	},
 	alldays: {
 		flexDirection: 'column',

@@ -3,7 +3,9 @@ import { View, Button, StatusBar, StyleSheet, Alert, TouchableOpacity, Text } fr
 import I18n from '../../tools/i18n/locales';
 import { FontAwesome } from '@expo/vector-icons';
 
-const Settings = ({ navigation }) => {
+import config from '../../config';
+
+const Settings = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => Alert.alert('Button pressed')} >
@@ -33,12 +35,12 @@ const styles = StyleSheet.create({
   },
   appButtonProfile: {
     fontSize: 18,
-    color: "gray",
+    color: config.DARK_GRAY,
     fontWeight: "bold",
     alignSelf: "center",
     textAlign: "center",
     textTransform: "uppercase",
-    backgroundColor: "#fff",
+    backgroundColor: config.LIGHT_GRAY,
     width: 300,
     marginTop: 25,
     marginBottom: 10,
@@ -48,12 +50,12 @@ const styles = StyleSheet.create({
   },
   appButtonNotification: {
     fontSize: 18,
-    color: "gray",
+    color: config.DARK_GRAY,
     fontWeight: "bold",
     alignSelf: "center",
     textAlign: "center",
     textTransform: "uppercase",
-    backgroundColor: "#fff",
+    backgroundColor: config.LIGHT_GRAY,
     width: 300,
     marginTop: 10,
     marginBottom: 200,

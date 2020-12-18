@@ -66,7 +66,8 @@ export default {
     mostRecent: 'Plus recent',
     endCycle: 'Fin du cycle',
     sorry: 'Désolé, cette fonctionnalité n\'est pas encore prête.',
-    back: 'Retour'
+    back: 'Retour',
+    newcycle: "Premier jour de règle",
   },
 
   settings: {
