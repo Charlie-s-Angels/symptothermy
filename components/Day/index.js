@@ -24,7 +24,7 @@ const Day = ({ temp, timestamp, index }) => {
 			case 6:
 				return "S";
 			default:
-				return "R"; 
+				return "Err"; 
 		};
 	};
 

@@ -19,6 +19,7 @@ const useGetData = (entity) => {
             setData(result);
         })
         .catch((error) => {
+            setData(config.FAKE_10_FUTURE_DATA);
             setError(error.message);
         })
         .finally(() => {

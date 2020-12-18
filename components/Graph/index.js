@@ -5,7 +5,8 @@ import Day from '../Day';
 import useGetData from '../../hooks/useGetData';
 
 const Graph = () => {
-  const { isLoading, data } = useGetData("temperatures");
+  const { isLoading, data, error } = useGetData("temperatures");
+  console.log(error);
 
   const renderItem = ({ item }) => (
     <Day temp={item.temperature} timestamp={item.timestamp} index={data.indexOf(item)} />
