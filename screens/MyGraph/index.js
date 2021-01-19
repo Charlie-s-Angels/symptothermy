@@ -17,7 +17,7 @@ const MyGraph = () => {
       <View style={styles.graph}>
         <Graph />
         <TouchableOpacity
-          onLongPress={() => Alert.alert("coucou")}
+          onLongPress={() => Alert.alert("new cycle?")}
         >
           <LinearGradient
             colors={[config.WHITE, config.BLUE]}

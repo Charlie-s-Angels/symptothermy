@@ -62,12 +62,9 @@ export default {
 
   graph: {
     title: 'Mon Graph',
-    firstPeriodDay: 'Premier jour de règles',
     mostRecent: 'Plus recent',
-    endCycle: 'Fin du cycle',
-    sorry: 'Désolé, cette fonctionnalité n\'est pas encore prête.',
-    back: 'Retour',
     newcycle: "Premier jour de règles",
+    addData: "Ajouter des données",
   },
 
   settings: {
