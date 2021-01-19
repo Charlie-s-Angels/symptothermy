@@ -46,7 +46,7 @@ const Day = ({ item, index }) => {
 				style={[styles.alldays, dayLetter()==="S"? styles.weekend : styles.week]}
 				onPress={() => Alert.alert("Button pressed")}
 			>
-				<Text style={styles.hour}>{`${date.getUTCHours()}:${date.getMinutes()}`}</Text>
+				<Text style={styles.hour}>{item.isDataReal && `${date.getUTCHours()}:${date.getMinutes()}`}</Text>
 				<Text style={[styles.day, isDataRealStyle()]}>{dayLetter()}</Text>
 				<Temp temp={item.temperature} isDataReal={item.isDataReal} />
 			</TouchableOpacity>
@@ -57,7 +57,6 @@ const Day = ({ item, index }) => {
 
 const styles = StyleSheet.create({
 	container: {
-		marginVertical: 8,
 		flex: 1,
 	},
 	alldays: {
