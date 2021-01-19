@@ -23,20 +23,14 @@ const Temp = ({ temp, isDataReal }) => {
     const setTempHeightOnGraph = {
         bottom: `${tempInPourcentage}%`,
     };
-
-    const isDataRealStyle = () => {
-        if (isDataReal) {
-            return {
-                backgroundColor: tempBackgroundColor
-            };
-        }
-        return { 
-            borderStyle: "dashed"
-        };
-    };
     
     return (
-        <View style={[styles.container, setTempHeightOnGraph, isDataRealStyle()]}>
+        <View
+            style={[
+                isDataReal ? [styles.container, {backgroundColor: tempBackgroundColor}] : styles.hideTemp,
+                setTempHeightOnGraph
+            ]}
+        >
         </View>
     )
 };
@@ -50,6 +44,9 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 8,
         borderColor: config.LIGHT_GRAY,
+    },
+    hideTemp: {
+        display: 'none',
     }
 });
 

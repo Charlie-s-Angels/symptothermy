@@ -62,12 +62,9 @@ export default {
 
   graph: {
     title: 'My Graph',
-    firstPeriodDay: 'First period day',
     mostRecent: 'Most recent',
-    endCycle: 'End your cycle',
-    sorry: 'Sorry, this feature is not ready yet.',
-    back: 'Back',
     newcycle: "First period day",
+    addData: "Add data",
   },
 
   settings: {
